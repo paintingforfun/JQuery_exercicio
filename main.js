@@ -1,0 +1,82 @@
+$(document).ready(function() {
+const listItems = [];
+
+
+$('form').on('submit', function(e) {
+
+        e.preventDefault();
+
+        const tarefa = $('#nome-tarefa').val();
+        const listaTarefas = $('ul')
+
+
+        let novaTarefa = $(`<li >
+                                ${tarefa}
+                        </li>`);
+
+
+        listItems.push(novaTarefa);
+
+
+
+        listItems.forEach((novaTarefa) => {
+            novaTarefa.appendTo(listaTarefas);
+
+
+        })
+
+
+
+        $('input').val('');
+    })
+
+
+    // ----//----
+
+
+    listItems.forEach((novaTarefa) => {
+    
+        novaTarefa.on('click', function(e) {
+            if (e.target.classList.contains('check')) {
+                e.target.classList.remove('check')
+                
+            }
+            else {
+                e.target.classList.add('check');
+            
+            }
+        })
+    
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+});
+
+
+
+
+
+// 1º TENTATIVA DE CODIGO
+
+            // listItems.forEach((novaTarefa) => {
+            //     novaTarefa.addEventListener('click', function() {
+            //         if (novaTarefa.classList.contains('check')) {
+            //             novaTarefa.classList.remove('check');
+            //             novaTarefa.appendTo(listaTarefas);
+            
+            //         }
+            //         else {
+                //             novaTarefa.classList.add('check');
+            //             novaTarefa.appendTo(listaTarefas);
+            //         }
+            //     })
+            // } )
+            
+
+
