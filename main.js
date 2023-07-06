@@ -14,18 +14,7 @@ $('form').on('submit', function(e) {
                                 ${tarefa}
                         </li>`);
 
-
-        listItems.push(novaTarefa);
-
-
-
-        listItems.forEach((novaTarefa) => {
-            novaTarefa.appendTo(listaTarefas);
-
-
-        })
-
-
+        novaTarefa.appendTo(listaTarefas);
 
         $('input').val('');
     })
@@ -33,50 +22,12 @@ $('form').on('submit', function(e) {
 
     // ----//----
 
-
-    listItems.forEach((novaTarefa) => {
-    
-        novaTarefa.on('click', function(e) {
-            if (e.target.classList.contains('check')) {
-                e.target.classList.remove('check')
-                
+        $('ul').on('click', function(e) {
+            if(e.target.classList.contains('check')) {
+                e.target.classList.remove('check');
             }
             else {
                 e.target.classList.add('check');
-            
             }
-        })
-    
-    })
-    
-    
-    
-    
-    
-    
-    
-    
+        }) 
 });
-
-
-
-
-
-// 1º TENTATIVA DE CODIGO
-
-            // listItems.forEach((novaTarefa) => {
-            //     novaTarefa.addEventListener('click', function() {
-            //         if (novaTarefa.classList.contains('check')) {
-            //             novaTarefa.classList.remove('check');
-            //             novaTarefa.appendTo(listaTarefas);
-            
-            //         }
-            //         else {
-                //             novaTarefa.classList.add('check');
-            //             novaTarefa.appendTo(listaTarefas);
-            //         }
-            //     })
-            // } )
-            
-
-
